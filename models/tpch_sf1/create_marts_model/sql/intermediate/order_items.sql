@@ -22,6 +22,11 @@ select
     
     
     line_item.return_flag,
+    case 
+        when line_item.return_flag = 'returned'
+            then 1
+        else 0
+    end as is_returned,
     
     line_item.line_number,
     line_item.status_code as order_item_status_code,

@@ -2,6 +2,9 @@ version: 2
 
 models:
   - name: fct_orders
+    tests:
+      - dbt_utils.equality:
+          compare_model: ref('fct_orders_pandas')
     description: orders fact table
     columns:
       - name: order_key
